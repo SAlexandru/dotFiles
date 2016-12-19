@@ -3,12 +3,19 @@ export LANG=en_US.UTF-8
 
 
 export EDITOR=vim
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export LOCAL_BIN=$HOME/bin
 export CLICOLOR=1
+export BROWSER=chrome
+export TERM=screen-256color
 export LSCOLORS=ExFxCxDxBxegedabagacad
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
-export ES_HOME=/usr/share/elasticsearch
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+
+export ES_DATA=/usr/local/var/elasticsearch/elasticsearch_nightcrawler
+export ES_LOGS=/usr/local/var/log/elasticsearch/elasticsearch_nightcrawler.log
+export ES_CONFIG=/usr/local/etc/elasticsearch/
+
 
 # colors
 export COLOR_NC='\e[0m' # No Color
@@ -29,15 +36,25 @@ export COLOR_YELLOW='\e[1;33m'
 export COLOR_GRAY='\e[0;30m'
 export COLOR_LIGHT_GRAY='\e[0;37m'
 
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
-export BROWSER=chrome
-export TERM=screen-256color
+# enable color support of ls and also add handy aliases
+alias ls='ls --color=auto '
+#alias dir='dir --color=auto'
+#alias vdir='vdir --color=auto'
+alias grep='grep --color=auto '
+alias fgrep='fgrep --color=auto '
+alias egrep='egrep --color=auto '
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias projects="cd ~/Desktop/Projects"
 alias ls='ls --color=auto -GFh'
 alias grep='grep --color=always '
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
 
-alias connectDev='ssh -L 9400:127.0.0.1:9200 salex@dev.busymachines.com'
+
