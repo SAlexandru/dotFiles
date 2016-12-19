@@ -9,7 +9,7 @@ export TERM=screen-256color
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH
+export PATH=$(brew --prefix)/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
 export ES_DATA=/usr/local/var/elasticsearch/elasticsearch_nightcrawler
