@@ -1,8 +1,12 @@
 vim/bundle/*
+vim/plugged/*
+vim/autoload/*
 emacs.d/auto-save-list
 emacs.d/elpa
 emacs.d/ido.last
 emacs.d/recentf
+
+tmux/plugins/*
 
 #mac stuff
 .DS_Store
